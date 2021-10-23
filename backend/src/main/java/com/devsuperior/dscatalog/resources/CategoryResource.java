@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.dscatalog.entities.Category;
+import com.devsuperior.dscatalog.dto.CategoryDTO;
 import com.devsuperior.dscatalog.services.CategoryService;
 
 @RestController // indica que essa classe sera um controlador REST
@@ -19,8 +19,8 @@ public class CategoryResource {
 	private CategoryService service;
 
 	@GetMapping // indica que vai ser um endpoint de request
-	public ResponseEntity<List<Category>> findAll() {
-		List<Category> list = service.findAll();
+	public ResponseEntity<List<CategoryDTO>> findAll() {
+		List<CategoryDTO> list = service.findAll();
 
 		/*
 		 * LISTA MOOCK List<Category> list = new ArrayList<>(); list.add(new
