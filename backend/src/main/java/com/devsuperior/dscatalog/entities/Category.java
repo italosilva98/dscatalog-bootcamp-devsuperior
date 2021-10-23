@@ -11,13 +11,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_category")
 public class Category implements Serializable {
-	private static final long serialVersionUID = 1L; //para que o objeto java possa ser convertido em bytes
-	
+	private static final long serialVersionUID = 1L; // para que o objeto java possa ser convertido em bytes
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
+
 	public Category() {
 	}
 
@@ -66,7 +66,5 @@ public class Category implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }

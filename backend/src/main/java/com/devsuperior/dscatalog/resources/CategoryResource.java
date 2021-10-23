@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.dscatalog.dto.CategoryDTO;
 import com.devsuperior.dscatalog.services.CategoryService;
+import com.devsuperior.dscatalog.services.exceptions.EntityNotFoundException;
 
 @RestController // indica que essa classe sera um controlador REST
 @RequestMapping(value = "/categories") // define a rota
@@ -29,6 +31,17 @@ public class CategoryResource {
 		 */
 
 		return ResponseEntity.ok().body(list);
+	}
+
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<CategoryDTO> findById(@PathVariable Long id) {
+		// @PathVariable utilizado para casar o parametro com o id na rota
+
+			CategoryDTO dto = service.findById(id);
+			
+		
+
+		return ResponseEntity.ok().body(dto);
 	}
 
 }

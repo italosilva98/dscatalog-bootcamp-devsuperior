@@ -8,5 +8,4 @@ import com.devsuperior.dscatalog.entities.Category;
 //parametros: entidade e tipo do ID
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
-
 }
