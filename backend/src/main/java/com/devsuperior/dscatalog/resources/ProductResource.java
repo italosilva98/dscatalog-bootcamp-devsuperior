@@ -29,9 +29,9 @@ public class ProductResource {
 	@GetMapping // indica que vai ser um endpoint de request
 	public ResponseEntity<Page<ProductDTO>> findAll(Pageable pageable) {
 		
-		Page<ProductDTO> list = service.findAllPaged(pageable);
+		Page<ProductDTO> page = service.findAllPaged(pageable);
 		
-		return ResponseEntity.ok().body(list);
+		return ResponseEntity.ok().body(page);
 
 		/*
 		 * LISTA MOOCK List<Product> list = new ArrayList<>(); list.add(new
